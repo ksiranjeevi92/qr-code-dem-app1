@@ -150,8 +150,10 @@ var data = [{
  onPrint(data) {
     //  this.printerService.printHTML('Honeywell PC42t (203 dpi) - ESim', data);
    
-    this.printerService.printData('Honeywell PC42t (203 dpi) - ESim', data).subscribe(() => {});
-     console.log(data.data);
+    // this.printerService.printData('Honeywell PC42t (203 dpi) - ESim', data).subscribe(() => {});
+     console.log(data[0].data);
+        var myWindow = window.open("", "BarCode Print");
+    myWindow.document.write(data[0].data);
   
     this.printData = [1];
  }
