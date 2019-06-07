@@ -7,7 +7,7 @@ import {PrinterService} from './printer.service';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent implements AfterViewInit,OnInit {
-  printData = [];
+  printData = [1, 2 , 3];
   @ViewChild('set')set: ElementRef;
   @ViewChild('code')code: ElementRef;
   @ViewChild('des')des: ElementRef;
@@ -18,6 +18,7 @@ export class AppComponent implements AfterViewInit,OnInit {
 
 ngOnInit() {
   console.log('AppComponent____________');
+
     
 }
 
@@ -56,7 +57,7 @@ ngOnInit() {
            }
       @page {
         margin: 0;
-        size: 102.6mm 25mm;
+       
       }
       }
       .page-break {
@@ -142,18 +143,17 @@ var data = [{
       format: 'plain',
       data: printContent
     }]
+    data[0].data = printContent;
     this.onPrint(data);
  }
 
  onPrint(data) {
-    this.printerService.printData('Honeywell PC42t (203 dpi) - ESim', data).subscribe(
-      data => {
-        console.log('ok print');
-      },
-      err => {
-        console.log(err);
-      }
-    );
+    //  this.printerService.printHTML('Honeywell PC42t (203 dpi) - ESim', data);
+   
+    this.printerService.printData('Honeywell PC42t (203 dpi) - ESim', data).subscribe(() => {});
+     console.log(data.data);
+  
+    this.printData = [1];
  }
 
  submit() {
@@ -164,7 +164,10 @@ var data = [{
        this.printData.push(i);
      }
    }
-   console.log(this.printData);
    this.print(comp);
+ }
+
+ removePrinter() {
+   this.printerService.removePrinter();
  }
 }

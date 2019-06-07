@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { from as fromPromise, Observable, throwError } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 import * as qz from 'qz-tray';
 import { sha256 } from 'js-sha256';
@@ -13,10 +14,49 @@ import { sha256 } from 'js-sha256';
 export class PrinterService {
 
   //npm install qz-tray js-sha256 rsvp --save
-  constructor() {
+  constructor(private http: HttpClient) {
     qz.api.setSha256Type(data => sha256(data));
     qz.api.setPromiseType(resolver => new Promise(resolver));
   }
+
+	async getPrivateKey() {
+		return this.http.get("/certificates/cert.txt", { responseType: 'text' }).toPromise();
+	}
+
+	async getPrivatePem() {
+		return this.http.get("/certificates/key.txt", { responseType: 'text' }).toPromise();
+	}
+	
+	initQZ () {
+		let privateKey = '';
+		let privatePem = '';
+
+		this.getPrivateKey().then((data) => privateKey = data);
+		this.getPrivatePem().then((data) => privatePem = data);
+		
+		qz.security.setCertificatePromise(function(resolve, reject) {
+			console.log('Set Certificate');
+			resolve(privateKey);
+		});
+	
+		qz.security.setSignaturePromise(function(toSign) {
+			return function(resolve, reject) {
+				try {
+					var pk = KJUR.KEYUTIL.getKey(privatePem);
+					var sig = new KJUR.crypto.Signature({"alg": "SHA1withRSA"});
+					sig.init(pk); 
+					sig.updateString(toSign);
+					var hex = sig.sign();
+					resolve(KJUR.stob64(KJUR.hextorstr(hex)));
+				} catch (err) {
+					console.error(err);
+					reject(err);
+				}
+			};
+		});
+
+		qz.websocket.connect();
+	}
   // Get the list of printers connected
   getPrinters(): Observable<string[]> {
     console.log('+++++++++PrinterService+++++');
@@ -46,6 +86,17 @@ export class PrinterService {
       , catchError(this.errorHandler);
   }
 
+  printHTML(printerName, htmlData) {
+		qz.printers.find(printerName).then(function(found) {
+			console.log("Printer: " + found);
+			var config = qz.configs.create(printerName);
+			
+			qz.print(config, htmlData).then(function() {
+				console.log("Sent data to printer");
+			}).catch((err) => console.log(err));
+		}).catch((err) => {console.log(err) });
+	}
+
   private errorHandler(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       console.log(error.error);
@@ -57,4 +108,9 @@ export class PrinterService {
       return throwError(error.error);
     }
   };
+
+  // Disconnect QZ Tray from the browser
+	removePrinter(): void {
+		qz.websocket.disconnect();
+	}
 }
