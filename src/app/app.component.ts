@@ -7,7 +7,7 @@ import {PrinterService} from './printer.service';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent implements AfterViewInit,OnInit {
-  printData = [1, 2 , 3];
+  printData = [1];
   @ViewChild('set')set: ElementRef;
   @ViewChild('code')code: ElementRef;
   @ViewChild('des')des: ElementRef;
@@ -152,8 +152,8 @@ var data = [{
    
     // this.printerService.printData('Honeywell PC42t (203 dpi) - ESim', data).subscribe(() => {});
      console.log(data[0].data);
-        var myWindow = window.open("", "BarCode Print");
-    myWindow.document.write(data[0].data);
+    //     var myWindow = window.open("", "BarCode Print");
+    // myWindow.document.write(data[0].data);
   
     this.printData = [1];
  }
