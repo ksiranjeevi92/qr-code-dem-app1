@@ -153,8 +153,10 @@ var data1 = [{
  }
 
  onPrint(data) {
+
+   console.log(this.printData);
   
-     this.printerService.printHTML('Microsoft Print to PDF', data);
+     this.printerService.printHTML('Honeywell PC42t (203 dpi) - ESim', data);
    
     // this.printerService.printData('Honeywell PC42t (203 dpi) - ESim', data).subscribe(() => {});
     
@@ -209,10 +211,12 @@ var data1 = [{
  submit() {
    const comp = {itemCode: this.code.nativeElement.value, description: this.des.nativeElement.value, baseUoMCode: this.uom.nativeElement.value, baseQuantity: this.qty.nativeElement.value};
    const loop = this.set.nativeElement.value;
+   var arr = [];
    if(loop && loop > 1) {
-     for(var i = 0; i <= loop; i++) {
-       this.printData.push(i);
+     for(var i = 0; i <= (loop - 1); i++) {
+       arr.push(i);
      }
+     this.printData = arr;
    }
    this.print(comp);
  }

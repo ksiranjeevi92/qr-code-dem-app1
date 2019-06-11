@@ -79,7 +79,7 @@ export class PrinterService {
 
   // Print data to chosen printer
   printData(printer: string, data: any): Observable<any> {
-    const config = qz.configs.create(printer);
+    const config = qz.configs.create(printer,{scaleContent: false, rasterize: "false"});
     
     return fromPromise(qz.print(config, data))
     map((anything: any) => anything)
@@ -89,7 +89,7 @@ export class PrinterService {
   printHTML(printerName, htmlData) {
 		qz.printers.find(printerName).then(function(found) {
 			console.log("Printer: " + found);
-			var config = qz.configs.create(printerName,  { scaleContent: "false" });
+			var config = qz.configs.create(printerName, {scaleContent: "false", rasterize: "false"});
 			
 			qz.print(config, htmlData).then(function() {
 				console.log("Sent data to printer");
