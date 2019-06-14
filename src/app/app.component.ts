@@ -85,10 +85,10 @@ ${this.printData.map((item, i) => `
       <div class="container" style="height: 22mm;width: 47mm; float: ${(i + 1) % 2 !== 0 ? 'left' : 'right'}">
 
 
-        <div id="label1" style="display:${(i + 1) % 2 !== 0 ? '' : 'none'};margin-bottom: 4mm;margin-right: 1mm;margin-left: 4mm;
-        height: 20mm;width: 42mm;background: gren">
-           <div id="table1" style="display: table;height: 20mm;width: 154px;border-spacing: 4px;">
-             <div style="display: table-row;height: 20mm;width: 150px;">
+        <div id="label1" style="display:${(i + 1) % 2 !== 0 ? '' : 'none'};margin-bottom: 5mm;margin-right: 1mm;margin-left: 4mm;margin-top: 0;
+        height: 19mm;width: 42mm;background: gren">
+           <div id="table1" style="display: table;height: 19mm;width: 154px;border-spacing: 4px;">
+             <div style="display: table-row;height: 19mm;width: 150px;">
                <div style="display: table-cell;width: 70px;max-width: 70px;vertical-align: middle;">
                 <div>
                   <img src="${"https://chart.googleapis.com/chart?cht=qr&chl=" + (pdata.itemCode  + '%09' + pdata.description + '%09' + pdata.baseUoMCode + '%09' + pdata.baseQuantity) + "&chs=67x62&chld=L|0"}">
@@ -96,7 +96,7 @@ ${this.printData.map((item, i) => `
                 <div style="width: 70px;max-width: 70px;overflow: hidden;font-family: Impact;font-size: 12px;text-align: center">${pdata.itemCode}</div>
                </div>
                 
-                <div style="display: table-cell;width: 80px;max-width: 80px;height: 20mm">
+                <div style="display: table-cell;width: 80px;max-width: 80px;height: 19mm">
                   <div style="display: inline-block;font-family: Impact;font-size:10px;width: 80px;max-width: 80px;overflow: hidden;height: 17mm;max-height: 17mm">
                       <div>Chrysanthemum Deco</div>
                       <div>Snowdown Zembia</div>
@@ -110,10 +110,10 @@ ${this.printData.map((item, i) => `
            </div>
         </div>
          
-          <div id="labe2" style="display:${(i + 1) % 2 !== 0 ? 'none' : ''};margin-bottom: 4mm;margin-right: 1mm;margin-left: 1mm;
-                 height: 20mm;width: 45mm;background: yelow">
-           <div id="table1" style="display: table;height: 20mm;width: 154px;border-spacing: 4px;">
-             <div style="display: table-row;height: 20mm;width: 150px;">
+          <div id="labe2" style="display:${(i + 1) % 2 !== 0 ? 'none' : ''};margin-bottom: 5mm;margin-right: 1mm;margin-left: 1mm;margin-top: 0;
+                 height: 19mm;width: 45mm;background: yelow">
+           <div id="table1" style="display: table;height: 19mm;width: 154px;border-spacing: 4px;">
+             <div style="display: table-row;height: 19mm;width: 150px;">
                <div style="display: table-cell;width: 70px;max-width: 70px;vertical-align: middle;">
                 <div>
                   <img src="${"https://chart.googleapis.com/chart?cht=qr&chl=" + (pdata.itemCode  + '%09' + pdata.description + '%09' + pdata.baseUoMCode + '%09' + pdata.baseQuantity) + "&chs=67x62&chld=L|0"}">
@@ -121,11 +121,11 @@ ${this.printData.map((item, i) => `
                 <div style="width: 70px;max-width: 70px;overflow: hidden;font-family: Impact;font-size: 12px;text-align: center">${pdata.itemCode}</div>
                </div>
                 
-                <div style="display: table-cell;width: 80px;max-width: 80px;height: 20mm">
+                <div style="display: table-cell;width: 80px;max-width: 80px;height: 19mm">
                   <div style="display: inline-block;font-family: Impact;font-size:10px;width: 80px;max-width: 80px;overflow: hidden;height: 17mm;max-height: 17mm">
-                      <div>Chrysanthemum Deco</div>
-                      <div>Snowdown Zembia</div>
-                      <div>Yellow With Green 70cm</div>
+                      <div>${pdata.description}</div>
+                      <div>${pdata.color}</div>
+                      <div>${pdata.size}</div>
                   </div>
                   <div style="font-family: Calibri;font-size: 10px;font-weight: bold;height: 3mm;max-height: 3mm;display: flex;align-item: center">
                      <span>ULGKS@99</span>
@@ -154,18 +154,18 @@ var data = [{
 
    
   
-     this.printerService.printHTML('Honeywell PC42t (203 dpi) - ESim', data);
+    //  this.printerService.printHTML('Honeywell PC42t (203 dpi) - ESim', data);
    
     // this.printerService.printData('Honeywell PC42t (203 dpi) - ESim', data).subscribe(() => {});
     
-  //  var myWindow = window.open("", "BarCode Print");
-  //   myWindow.document.write(data[0].data);
+   var myWindow = window.open("", "BarCode Print");
+    myWindow.document.write(data[0].data);
     
   
     this.printData = [1];
 
     let html = data[0].data;
-  // this.pdfRocket(html, this.savePdf)
+ 
 
  }
 
