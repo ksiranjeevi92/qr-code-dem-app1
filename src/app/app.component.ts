@@ -100,10 +100,8 @@ ngOnInit() {
                     </div>
                       
                       <div style="display: table-cell;width: 80px;max-width: 80px;height: 19mm">
-                        <div style="display: inline-block;font-family: Impact;font-size:10px;width: 80px;max-width: 80px;overflow-y: hidden;height: 17mm;max-height: 17mm">
-                            <div>${pdata.description + pdata.color + pdata.size}</div>
-                            <div>Snowdown Zembia</div>
-                            <div>Yellow With Green 70cm</div>
+                        <div style="display: inline-block;font-family: Impact;font-size:10px;width: 80px;max-width: 80px;overflow: hidden;height: 17mm;max-height: 17mm">
+                            <div>${pdata.description}</div>
                         </div>
                         <div style="font-family: Calibri;font-size: 10px;font-weight: bold;height: 3mm;max-height: 3mm;display: flex;align-item: center">
                           <span>ULGKS@99</span>
@@ -121,14 +119,12 @@ ngOnInit() {
                       <div>
                         <img src="${"https://chart.googleapis.com/chart?cht=qr&chl=" + (pdata.itemCode  + '%09' + pdata.description + '%09' + pdata.baseUoMCode + '%09' + pdata.baseQuantity) + "&chs=67x62&chld=L|0"}">
                       </div>
-                      <div style="width: 70px;max-width: 70px;overflow-y: hidden;font-family: Impact;font-size: 12px;text-align: center">${pdata.itemCode}</div>
+                      <div style="width: 70px;max-width: 70px;overflow: hidden;font-family: Impact;font-size: 12px;text-align: center">${pdata.itemCode}</div>
                     </div>
                       
                       <div style="display: table-cell;width: 80px;max-width: 80px;height: 19mm">
                         <div style="display: inline-block;font-family: Impact;font-size:10px;width: 80px;max-width: 80px;overflow: hidden;height: 17mm;max-height: 17mm">
-                            <div>${pdata.description + pdata.color + pdata.size}</div>
-                            <div>${pdata.color}</div>
-                            <div>${pdata.size}</div>
+                            <div>${pdata.description}</div>
                         </div>
                         <div style="font-family: Calibri;font-size: 10px;font-weight: bold;height: 3mm;max-height: 3mm;display: flex;align-item: center">
                           <span>ULGKS@99</span>
