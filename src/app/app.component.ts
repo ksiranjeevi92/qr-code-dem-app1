@@ -18,7 +18,7 @@ export class AppComponent implements AfterViewInit,OnInit {
 
 ngOnInit() {
   console.log('AppComponent____________');
-
+  // this.getPrinters();
     
 }
 
@@ -74,7 +74,6 @@ ngOnInit() {
               padding: 0;
               background: blak;
               position: relative;
-              bottom: 1.5mm;
             }
         </style>
         <script>
