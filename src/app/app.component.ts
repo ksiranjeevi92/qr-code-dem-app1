@@ -84,11 +84,9 @@ ngOnInit() {
       <body>
       <div>
       ${this.printData.map((item, i) => ` 
-            <div class="container" style="height: 22mm;width: 47mm; float: ${(i + 1) % 2 !== 0 ? 'left' : 'right'}">
-
-
+            <div class="container" style="position: relative;height: 22mm;width: 47mm; float: ${(i + 1) % 2 !== 0 ? 'left' : 'right'}">             
               <div id="label1" style="display:${(i + 1) % 2 !== 0 ? '' : 'none'};margin-bottom: 5mm;margin-right: 1mm;margin-left: 4mm;margin-top: 0;
-              height: 19mm;width: 42mm;background: gren">
+              height: 19mm;width: 42mm;background: Gren">
                 <div id="table1" style="display: table;height: 19mm;width: 154px;border-spacing: 4px;">
                   <div style="display: table-row;height: 19mm;width: 150px;">
                     <div style="display: table-cell;width: 70px;max-width: 70px;vertical-align: middle;">
@@ -98,8 +96,9 @@ ngOnInit() {
                       <div style="width: 70px;max-width: 70px;overflow: hidden;font-family: Impact;font-size: 12px;text-align: center">${pdata.itemCode}</div>
                     </div>
                       
-                      <div style="display: table-cell;width: 80px;max-width: 80px;height: 19mm">
-                        <div style="display: inline-block;font-family: Impact;font-size:10px;width: 80px;max-width: 80px;overflow: hidden;height: 17mm;max-height: 17mm">
+                      <div style="display: table-cell;width: 80px;max-width: 80px;height: 19mm">                  
+                        <div style="display: inline-block;font-family: Impact;font-size:10px;width: 80px;max-width: 80px;overflow: hidden;height: 17mm;max-height: 17mm;position: relative">
+                         <span style="text-align: end;bottom: 0;text-align: end;display: block;position: absolute;width: 100%;">BTC</span>
                             <div>${pdata.description}</div>
                         </div>
                         <div style="font-family: Calibri;font-size: 10px;font-weight: bold;height: 3mm;max-height: 3mm;display: flex;align-item: center">
@@ -122,7 +121,8 @@ ngOnInit() {
                     </div>
                       
                       <div style="display: table-cell;width: 80px;max-width: 80px;height: 19mm">
-                        <div style="display: inline-block;font-family: Impact;font-size:10px;width: 80px;max-width: 80px;overflow: hidden;height: 17mm;max-height: 17mm">
+                        <div style="display: inline-block;font-family: Impact;font-size:10px;width: 80px;max-width: 80px;overflow: hidden;height: 17mm;max-height: 17mm;position: relative">
+                           <span style="text-align: end;bottom: 0;text-align: end;display: block;position: absolute;width: 100%;">BTC</span>
                             <div>${pdata.description}</div>
                         </div>
                         <div style="font-family: Calibri;font-size: 10px;font-weight: bold;height: 3mm;max-height: 3mm;display: flex;align-item: center">
