@@ -124,7 +124,7 @@ ngOnInit() {
                         <div style="display: inline-block;font-family: Impact;font-size:10px;width: 80px;max-width: 80px;overflow: hidden;height: 17mm;max-height: 17mm;position: relative">                         
                             <div>${pdata.description}</div>
                         </div>
-                        <div style="font-family: Calibri;font-size: 10px;font-weight: bold;height: 3mm;max-height: 3mm;display: flex;align-item: center">
+                        <div style="font-family: Calibri;font-size: 10px;font-weight: bold;height: 3mm;max-height: 3mm;display: flex;align-items: flex-end">
                           <span>ULGKS@99</span>
                         </div>
                          <strong style="text-align: end;bottom: 0;text-align: end;display: block;position:absolute;width: 100%;font-size: 9px;top:75px">BTC</strong>
