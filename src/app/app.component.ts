@@ -268,12 +268,12 @@ var data = [{
   //  let html = data[0].data;
   
     //  this.printerService.printHTML('Honeywell PC42t (203 dpi) - ESim', data);
-     this.printerService.printHTML('Intermec PD43 (203 dpi)', data);
+    //  this.printerService.printHTML('Intermec PD43 (203 dpi)', data);
    
     // this.printerService.printData('Honeywell PC42t (203 dpi) - ESim', data).subscribe(() => {});
     
-  //  var myWindow = window.open("", "BarCode Print");
-  //   myWindow.document.write(data[0].data);
+   var myWindow = window.open("", "BarCode Print");
+    myWindow.document.write(data[0].data);
     
   
   //   this.printData = [1];
