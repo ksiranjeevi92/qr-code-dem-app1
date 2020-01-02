@@ -4,16 +4,22 @@
   <button #button style="padding: 5px">Ok</button>
 </div>
 
-<div style="display: grid;grid-template-columns: 19% 19% 19% 19% 4%;grid-gap: 5%">
-  <div>Item Code</div>
-  <div>Description</div>
-  <div>Base Uom Code</div>
-  <div>Base Quantity</div>
-  <div>No of Sets</div>
-  <input #code type="text">
-  <input #des type="text">
+<div style="display: flex">
+  <label>Item Code:</label>
+   <input #code type="text">
+  <label>Grower Code:</label>
+  <input #grower type="text">
+  <label>Display Name:</label>
+    <input #des type="text">
+  <label>Uom:</label>
   <input #uom type="text">
+  <label>Base Quantity:</label>
   <input #qty type="text">
+  <label>timeStampCode:</label>
+  <input #timeStampCode type="text">
+   <label>Barcode ID:</label>
+  <input #bid type="text">
+  <label>No of Sets:</label>
   <input #set type="number">
 </div>
  <button style="margin-top: 30px;" (click)="submit()">Print</button>&nbsp;
