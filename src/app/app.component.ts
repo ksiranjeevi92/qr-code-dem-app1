@@ -208,14 +208,13 @@ ngOnInit() {
                     <div style="display: table-row;height: 19mm;width: 150px;">
                       <div style="display: table-cell;width: 70px;max-width: 70px;vertical-align: middle;">
                         <div>
-                          <img src="${"https://chart.googleapis.com/chart?cht=qr&chl=" + (pdata.itemCode + '%09' + '0' + '%13') + "&chs=67x57&chld=L|0"}">                          
+                          <img src="${"https://chart.googleapis.com/chart?cht=qr&chl=" + (pdata.itemCode + '%09' + '0' + '%13') + "&chs=67x62&chld=L|0"}">                          
                         </div>
-                        <div style="width: 70px;max-width: 70px;overflow: hidden;font-family: Impact;font-size: 11px;text-align: center">${pdata.itemCode}</div>
-                        <div style="width: 70px;max-width: 70px;overflow: hidden;font-family: Impact;font-size: 10px;text-align: center">${pdata.growerCode ? pdata.growerCode : ''}</div>
+                        <div style="width: 70px;max-width: 70px;overflow: hidden;font-family: Impact;font-size: 12px;text-align: center">${pdata.itemCode}</div>                       
                       </div>
                         
                         <div style="display: table-cell;width: 80px;max-width: 80px;height: 19mm;position: relative">
-                          <div style="display: inline-block;font-family: Impact;font-size:10px;width: 80px;max-width: 80px;overflow: hidden;height: 17mm;max-height: 17mm;position: relative">                         
+                          <div style="display: inline-block;font-family: Impact;font-size:10px;width: 80px;max-width: 80px;overflow: hidden;height: 17mm;max-height: 17mm;position: relative">      <div>${pdata.growerCode ? pdata.growerCode : ''}</div>               
                               <div>${pdata.displayName}</div>
                           </div>
                           <div style="font-family: Calibri;font-size: 12px;font-weight: bold;height: 3mm;max-height: 3mm;display: flex;align-item: center">
@@ -233,14 +232,13 @@ ngOnInit() {
                     <div style="display: table-row;height: 19mm;width: 150px;">
                       <div style="display: table-cell;width: 70px;max-width: 70px;vertical-align: middle;">
                         <div>
-                          <img src="${"https://chart.googleapis.com/chart?cht=qr&chl=" + (pdata.itemCode + '%09' + '0' + '%13') + "&chs=67x57&chld=L|0"}">
+                          <img src="${"https://chart.googleapis.com/chart?cht=qr&chl=" + (pdata.itemCode + '%09' + '0' + '%13') + "&chs=67x62&chld=L|0"}">
                         </div>
-                        <div style="width: 70px;max-width: 70px;overflow: hidden;font-family: Impact;font-size: 11px;text-align: center">${pdata.itemCode}</div>
-                          <div style="width: 70px;max-width: 70px;overflow: hidden;font-family: Impact;font-size: 10px;text-align: center">${pdata.growerCode ? pdata.growerCode : ''}</div>
+                        <div style="width: 70px;max-width: 70px;overflow: hidden;font-family: Impact;font-size: 12px;text-align: center">${pdata.itemCode}</div>                         
                       </div>
                         
                         <div style="display: table-cell;width: 80px;max-width: 80px;height: 19mm;position: relative">
-                          <div style="display: inline-block;font-family: Impact;font-size:10px;width: 80px;max-width: 80px;overflow: hidden;height: 17mm;max-height: 17mm;position: relative">                          
+                          <div style="display: inline-block;font-family: Impact;font-size:10px;width: 80px;max-width: 80px;overflow: hidden;height: 17mm;max-height: 17mm;position: relative">       <div>${pdata.growerCode ? pdata.growerCode : ''}</div>
                                <div>${pdata.displayName}</div>
                           </div>
                           <div style="font-family: Calibri;font-size: 12px;font-weight: bold;height: 3mm;max-height: 3mm;display: flex;align-item: center">
