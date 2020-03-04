@@ -208,7 +208,7 @@ ngOnInit() {
                     <div style="display: table-row;height: 19mm;width: 150px;">
                       <div style="display: table-cell;width: 70px;max-width: 70px;vertical-align: middle;">
                         <div>
-                          <img src="${"https://chart.googleapis.com/chart?cht=qr&chl=" + (pdata.itemCode + '%09' + '0' + '%13') + "&chs=67x62&chld=L|0"}">                          
+                          <img src="${"https://chart.googleapis.com/chart?cht=qr&chl=" + (pdata.itemCode + '%09' + '0' + '%H') + "&chs=67x62&chld=L|0"}">                          
                         </div>
                         <div style="width: 70px;max-width: 70px;overflow: hidden;font-family: Impact;font-size: 12px;text-align: center">${pdata.itemCode}</div>                       
                       </div>
@@ -232,7 +232,7 @@ ngOnInit() {
                     <div style="display: table-row;height: 19mm;width: 150px;">
                       <div style="display: table-cell;width: 70px;max-width: 70px;vertical-align: middle;">
                         <div>
-                          <img src="${"https://chart.googleapis.com/chart?cht=qr&chl=" + (pdata.itemCode + '%09' + '0' + '%13') + "&chs=67x62&chld=L|0"}">
+                          <img src="${"https://chart.googleapis.com/chart?cht=qr&chl=" + (pdata.itemCode + '%09' + '0' + '%H') + "&chs=67x62&chld=L|0"}">
                         </div>
                         <div style="width: 70px;max-width: 70px;overflow: hidden;font-family: Impact;font-size: 12px;text-align: center">${pdata.itemCode}</div>                         
                       </div>
